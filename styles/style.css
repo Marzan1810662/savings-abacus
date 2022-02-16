@@ -7,3 +7,16 @@
 .main-heading-icon{
     color: rgb(218, 197, 136);
 }
+
+#btn-calculate{
+    width: 200px;
+    height: 40px;
+    border: 0;
+    background-color: rgb(143, 203, 221);
+}
+#btn-save{
+    width: 130px;
+    height: 30px;   
+    border: 0;
+    background-color: rgb(143, 203, 221);
+}
