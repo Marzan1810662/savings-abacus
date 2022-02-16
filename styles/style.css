@@ -1,3 +1,9 @@
-h1{
-    text-align: center;
+
+
+/* -------------------------------Main Heading-------------------------- */
+.main-heading{
+    color: rgb(96, 159, 179);
+}
+.main-heading-icon{
+    color: rgb(218, 197, 136);
 }
