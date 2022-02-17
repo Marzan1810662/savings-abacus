@@ -39,23 +39,23 @@
                         <h4>Income</h4>
                         <div class="mt-3 d-flex justify-content-evenly align-items-center">
                             <span>Income: </span>
-                            <input id="input-income" class="ms-1 border-0 input-bg" type="number" min="0">
+                            <input id="input-income" class="ms-1 border-0 input-bg" type="number" min="0" onkeyup="checkValue('income')">
                         </div>
                         <p id="income-error-msg" class="text-danger mt-1">error</p>
                         <h4 class="mt-3">Expenses</h4>
                         <div class="mt-3 d-flex justify-content-evenly align-items-center">
                             <span>Food: </span>
-                            <input id="input-food" class="ms-1 border-0 input-bg" type="number" min="0">
+                            <input id="input-food" class="ms-1 border-0 input-bg" type="number" min="0" onkeyup="checkValue('food')">
                         </div>
                         <p id="food-error-msg" class="text-danger">error</p>
                         <div class="mt-3 d-flex justify-content-evenly align-items-center">
                             <span>Rent: </span>
-                            <input id="input-rent" class="ms-1 border-0 input-bg" type="number" min="0">
+                            <input id="input-rent" class="ms-1 border-0 input-bg" type="number" min="0" onkeyup="checkValue('rent')">
                         </div>
                         <p id="rent-error-msg" class="text-danger">error</p>
                         <div class="mt-3 d-flex justify-content-evenly align-items-center">
                             <span>Clothes: </span>
-                            <input id="input-clothes" class="ms-1 border-0 input-bg" type="number" min="0">
+                            <input id="input-clothes" class="ms-1 border-0 input-bg" type="number" min="0" onkeyup="checkValue('clothes')">
                         </div>
                         <p id="clothes-error-msg" class="text-danger">error</p>
                         <button id="btn-calculate" class="rounded mt-3 fw-bold">Calculate</button>
@@ -63,11 +63,11 @@
                             <h4 id="balance-error-msg" class="mt-3 fw-bold text-danger"></h4>
                         </div>
                         <div id="expense-balance-div">
-                            <h4 class="mt-3">Total Expenses: <span id="total-expenses"></span></h4>
-                            <h4 class="mt-3">Balance: <span id="balance"></span></h4>
+                            <h4 class="mt-3">Total Expenses: <span id="total-expenses">$</span></h4>
+                            <h4 class="mt-3">Balance: <span id="balance">$</span></h4>
                         </div>
                         <div class="mt-3 px-lg-5 d-flex justify-content-around align-items-center">
-                            <span>Save: </span><input id="input-save-percentage" class="ms-1 border-0 w-20 input-bg" type="number" min="0">
+                            <span>Save: </span><input id="input-save-percentage" class="ms-1 border-0 w-20 input-bg" type="number" min="0" onkeyup="checkValue('save-percentage')">
                             <span>%</span>
                             <button id="btn-save" class="rounded fw-bold">Save</button>
                         </div>
@@ -76,8 +76,8 @@
                             <h4 id="savings-error-msg" class="mt-3 fw-bold text-danger"></h4>
                         </div>
                         <div id="savings-balance-div">
-                            <h4 class="mt-3">Saving Amount: <span id="saving-amount"></span></h4>
-                            <h4 class="mt-3">Remaining Balance: <span id="remaining-balance"></span></h4>
+                            <h4 class="mt-3">Saving Amount: <span id="saving-amount">$</span></h4>
+                            <h4 class="mt-3">Remaining Balance: <span id="remaining-balance">$</span></h4>
                         </div>
                     </div>
                 </div>

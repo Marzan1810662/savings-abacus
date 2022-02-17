@@ -1,19 +1,48 @@
+function checkValue(id) {
+    const value = parseFloat(document.getElementById('input-' + id).value);
+    if (value < 0) {
+        if(id == 'income'){
+            document.getElementById(id + '-error-msg').innerText = 'please input positive value for saving percentage ';
+            document.getElementById(id + '-error-msg').style.display = 'block';
+            document.getElementById('btn-calculate').disabled = true;
+            document.getElementById('btn-save').disabled = true;
+        }
+        else if (id == 'save-percentage') {
+            document.getElementById(id + '-error-msg').innerText = 'please input positive value for saving percentage ';
+            document.getElementById(id + '-error-msg').style.display = 'block';
+            document.getElementById('btn-save').disabled = true;
+        }
+        else {
+            document.getElementById(id + '-error-msg').innerText = 'please input positive value for ' + id;
+            document.getElementById(id + '-error-msg').style.display = 'block';
+            document.getElementById('btn-calculate').disabled = true;
+        }
+    }
+    else {
+        document.getElementById(id + '-error-msg').style.display = 'none';
+        document.getElementById('btn-calculate').disabled = false;
+        document.getElementById('btn-save').disabled = false;
+    }
+}
+
 function getInputValue(id) {
     const value = parseFloat(document.getElementById('input-' + id).value);
     if (isNaN(value)) {
         if (id == 'income') {
             document.getElementById(id + '-error-msg').innerText = 'field can not be empty for ' + id;
             document.getElementById(id + '-error-msg').style.display = 'block';
+            return '';
         }
-        return 0;
-    }
-    else if (value < 0) {
-        document.getElementById(id + '-error-msg').innerText = 'please input positive value for ' + id;
-        document.getElementById(id + '-error-msg').style.display = 'block';
-        return 0;
+        else if (id == 'save-percentage') {
+            document.getElementById(id + '-error-msg').innerText = 'field can not be empty for saving percentage';
+            document.getElementById(id + '-error-msg').style.display = 'block';
+            return '';
+        }
+        else {
+            return 0;
+        }
     }
     else {
-        document.getElementById(id + '-error-msg').style.display = 'none';
         return value;
     }
 }
@@ -23,12 +52,14 @@ function calculateValue(button) {
     const foodExpense = getInputValue('food');
     const rent = getInputValue('rent');
     const clothesExpense = getInputValue('clothes');
-    const savingPercentage = getInputValue('save-percentage');
 
     const totalExpense = foodExpense + rent + clothesExpense;
-    console.log(totalExpense);
-
     const balance = income - totalExpense;
+    if (income == '') {
+        document.getElementById('total-expenses').innerText = '$' + income;
+        document.getElementById('balance').innerText = '$' + income;
+        return;
+    }
 
     if (button == 'calculate') {
         if (totalExpense > income) {
@@ -38,15 +69,24 @@ function calculateValue(button) {
 
         }
         else {
+            document.getElementById('balance-error-msg-div').style.display = 'none';
+            document.getElementById('expense-balance-div').style.display = 'block';
             document.getElementById('total-expenses').innerText = '$' + totalExpense.toFixed(2);
             document.getElementById('balance').innerText = '$' + balance.toFixed(2);
+
         }
     }
     else {
+        const savingPercentage = getInputValue('save-percentage');
+        if (savingPercentage == '') {
+            document.getElementById('saving-amount').innerText = '$';
+            document.getElementById('remaining-balance').innerText = '$';
+            return;
+        }
         const savingAmount = income * (savingPercentage / 100);
         document.getElementById('saving-amount').innerText = '$' + savingAmount;
         if (savingAmount > balance) {
-            document.getElementById('savings-error-msg').innerText = 'Can not save more than income.'
+            document.getElementById('savings-error-msg').innerText = 'Can not save more than balance.'
             document.getElementById('savings-error-msg-div').style.display = 'block';
             document.getElementById('savings-balance-div').style.display = 'none';
         }
