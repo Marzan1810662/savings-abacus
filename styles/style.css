@@ -11,6 +11,10 @@
 .input-bg{
 background-color: #DCDCDC;
 }
+#input-save{
+    width: 25%;
+    text-align: center;
+}
 #btn-calculate{
     width: 200px;
     height: 40px;
@@ -22,4 +26,24 @@ background-color: #DCDCDC;
     height: 30px;   
     border: 0;
     background-color: rgb(143, 203, 221);
+}
+/* -----------------------------error message---------------------------- */
+
+#income-error-msg{
+    display: none;
+}
+#food-error-msg{
+    display: none;
+}
+#rent-error-msg{
+    display: none;
+}
+#clothes-error-msg{
+    display: none;
+}
+/* #income-error-msg{
+    display: none;
+} */
+#balance-error-msg-div{
+    display: none;
 }
