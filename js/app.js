@@ -66,7 +66,9 @@ function calculateValue(button) {
     }
     //calculate total expense and balance
     if (button == 'calculate') {
-
+        document.getElementById('input-save-percentage').value = '';
+        document.getElementById('saving-amount').innerText = '$';
+        document.getElementById('remaining-balance').innerText = '$';
         if (totalExpense > income) {
             document.getElementById('balance-error-msg').innerText = 'Can not spend more than income.'
             document.getElementById('balance-error-msg-div').style.display = 'block';
