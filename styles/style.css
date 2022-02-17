@@ -7,7 +7,10 @@
 .main-heading-icon{
     color: rgb(218, 197, 136);
 }
-
+/* -------------------------------calculation part------------------------- */
+.input-bg{
+background-color: #DCDCDC;
+}
 #btn-calculate{
     width: 200px;
     height: 40px;
