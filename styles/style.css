@@ -11,7 +11,7 @@
 .input-bg{
 background-color: #DCDCDC;
 }
-#input-save{
+#input-save-percentage{
     width: 25%;
     text-align: center;
 }
@@ -45,6 +45,12 @@ background-color: #DCDCDC;
     display: none;
 } */
 #balance-error-msg-div{
+    display: none;
+}
+#savings-error-msg-div{
+    display: none;
+}
+#save-percentage-error-msg{
     display: none;
 }
 
