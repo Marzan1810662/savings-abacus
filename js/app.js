@@ -55,7 +55,7 @@ function calculateValue(button) {
     const foodExpense = getInputValue('food');
     const rent = getInputValue('rent');
     const clothesExpense = getInputValue('clothes');
-
+    
     const totalExpense = foodExpense + rent + clothesExpense;
     const balance = income - totalExpense;
     //error message for emput income input
@@ -71,7 +71,12 @@ function calculateValue(button) {
         document.getElementById('remaining-balance').innerText = '$';
         document.getElementById('savings-error-msg-div').style.display = 'none';
         document.getElementById('savings-balance-div').style.display = 'block';
-        if (totalExpense > income) {
+        if (income < 0 || foodExpense < 0 || rent < 0 || clothesExpense < 0) {
+            document.getElementById('total-expenses').innerText = '$';
+            document.getElementById('balance').innerText = '$';
+            return;
+        }
+        else if (totalExpense > income) {
             document.getElementById('balance-error-msg').innerText = 'Can not spend more than income.'
             document.getElementById('balance-error-msg-div').style.display = 'block';
             document.getElementById('expense-balance-div').style.display = 'none';
@@ -91,7 +96,7 @@ function calculateValue(button) {
         if (savingPercentage == '') {
             document.getElementById('saving-amount').innerText = '$';
             document.getElementById('remaining-balance').innerText = '$';
-            
+
             return;
         }
         const savingAmount = income * (savingPercentage / 100);
@@ -103,7 +108,6 @@ function calculateValue(button) {
         }
         else {
             const remainingBalance = balance - savingAmount;
-            console.log(remainingBalance);
             document.getElementById('remaining-balance').innerText = '$' + remainingBalance;
             document.getElementById('savings-error-msg-div').style.display = 'none';
             document.getElementById('savings-balance-div').style.display = 'block';
@@ -131,7 +135,7 @@ document.getElementById('btn-reset').addEventListener('click',
             input.value = '';
         }
         document.getElementById('total-expenses').innerText = '$';
-        document.getElementById('balance').innerText = '$' ;
+        document.getElementById('balance').innerText = '$';
 
         document.getElementById('saving-amount').innerText = '$';
         document.getElementById('remaining-balance').innerText = '$';
