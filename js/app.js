@@ -148,4 +148,7 @@ document.getElementById('btn-reset').addEventListener('click',
 
         document.getElementById('balance-error-msg-div').style.display = 'none';
         document.getElementById('savings-error-msg-div').style.display = 'none';
+
+        document.getElementById('btn-calculate').disabled = false;
+        document.getElementById('btn-save').disabled = false;
     });
