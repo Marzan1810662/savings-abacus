@@ -111,16 +111,27 @@ document.getElementById('btn-calculate').addEventListener('click',
     function () {
         calculateValue('calculate');
     });
+
 //click handler for save butoon
 document.getElementById('btn-save').addEventListener('click',
     function () {
         calculateValue('save');
     });
+
 // reset all fields
 document.getElementById('btn-reset').addEventListener('click',
-function(){
-    const inputs = document.getElementsByTagName('input');
-    for (const input of inputs) {
-        input.value ='';
-    }
-});
+    function () {
+        const inputs = document.getElementsByTagName('input');
+        for (const input of inputs) {
+            input.value = '';
+        }
+
+        document.getElementById('income-error-msg').style.display = 'none';
+        document.getElementById('food-error-msg').style.display = 'none';
+        document.getElementById('rent-error-msg').style.display = 'none';
+        document.getElementById('clothes-error-msg').style.display = 'none';
+        document.getElementById('save-percentage-error-msg').style.display = 'none';
+
+        document.getElementById('balance-error-msg-div').style.display = 'none';
+        document.getElementById('savings-error-msg-div').style.display = 'none';
+    });
