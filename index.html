@@ -38,31 +38,47 @@
                 <div class="col-12 col-lg-5">
                     <div class="container-fluid text-center bg-light py-3 py-lg-4">
                         <!-- calculate total expense and balance starts -->
-                        <div>
+                        <div class="ps-lg-4">
                             <h4>Income</h4>
-                            <div class="mt-3 d-flex justify-content-evenly align-items-center">
-                                <span>Income: </span>
-                                <input id="input-income" class="ms-1 border-0 input-bg" type="number" min="0"
-                                    onkeyup="checkValue('income')">
+                            <div class="mt-3 row g-0 text-center">
+                                <div class="col-lg-4">
+                                    <span>Income: </span>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input id="input-income" class="ms-1 border-0 input-bg ps-2 fs-6" type="number" min="0"
+                                        onkeyup="checkValue('income')">
+                                </div>
                             </div>
                             <p id="income-error-msg" class="text-danger mt-1">error</p>
                             <h4 class="mt-3">Expenses</h4>
-                            <div class="mt-3 d-flex justify-content-evenly align-items-center">
-                                <span>Food: </span>
-                                <input id="input-food" class="ms-1 border-0 input-bg" type="number" min="0"
-                                    onkeyup="checkValue('food')">
+                            <div class="mt-3 row g-0">
+                                <div class="col-lg-4">
+                                    <span>Food: </span>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input id="input-food" class="ms-1 border-0 input-bg ps-2 fs-6" type="number" min="0"
+                                        onkeyup="checkValue('food')">
+                                </div>
                             </div>
                             <p id="food-error-msg" class="text-danger">error</p>
-                            <div class="mt-3 d-flex justify-content-evenly align-items-center">
-                                <span>Rent: </span>
-                                <input id="input-rent" class="ms-1 border-0 input-bg" type="number" min="0"
-                                    onkeyup="checkValue('rent')">
+                            <div class="mt-3 row g-0">
+                                <div class="col-lg-4">
+                                    <span>Rent: </span>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input id="input-rent" class="ms-1 border-0 input-bg ps-2 fs-6" type="number" min="0"
+                                        onkeyup="checkValue('rent')">
+                                </div>
                             </div>
                             <p id="rent-error-msg" class="text-danger">error</p>
-                            <div class="mt-3 d-flex justify-content-evenly align-items-center">
-                                <span>Clothes: </span>
-                                <input id="input-clothes" class="ms-1 border-0 input-bg" type="number" min="0"
-                                    onkeyup="checkValue('clothes')">
+                            <div class="mt-3 row g-0">
+                                <div class="col-lg-4">
+                                    <span>Clothes: </span>
+                                </div>
+                                <div class="col-lg-4">
+                                    <input id="input-clothes" class="ms-1 border-0 input-bg ps-2 fs-6" type="number" min="0"
+                                        onkeyup="checkValue('clothes')">
+                                </div>
                             </div>
                             <p id="clothes-error-msg" class="text-danger">error</p>
                             <button id="btn-calculate" class="rounded mt-3 fw-bold">Calculate</button>
@@ -77,11 +93,15 @@
                         <!-- calculate total expense and balance ends -->
                         <!-- calculate savings and remaining balance starts -->
                         <div>
-                            <div class="mt-3 px-lg-5 d-flex justify-content-around align-items-center">
-                                <span>Save: </span><input id="input-save-percentage" class="ms-1 border-0 w-20 input-bg"
-                                    type="number" min="0" onkeyup="checkValue('save-percentage')">
-                                <span>%</span>
-                                <button id="btn-save" class="rounded fw-bold">Save</button>
+                            <div
+                                class="mt-lg-3 px-lg-5 d-flex flex-column flex-lg-row justify-content-around align-items-center">
+                                <span class="mt-3 mt-lg-0">Save: </span>
+                                
+                                    <input id="input-save-percentage" class="ms-1 mt-3 mt-lg-0 border-0 w-20 input-bg" type="number"
+                                        min="0" onkeyup="checkValue('save-percentage')">
+                                    <span class="mt-3 mt-lg-0">%</span>
+                                
+                                <button id="btn-save" class="mt-3 mt-lg-0 rounded fw-bold">Save</button>
                             </div>
                             <p id="save-percentage-error-msg" class="text-danger">error</p>
                             <div id="savings-error-msg-div">
