@@ -1,7 +1,8 @@
+//check if input values are negative
 function checkValue(id) {
     const value = parseFloat(document.getElementById('input-' + id).value);
     if (value < 0) {
-        if(id == 'income'){
+        if (id == 'income') {
             document.getElementById(id + '-error-msg').innerText = 'please input positive value for saving percentage ';
             document.getElementById(id + '-error-msg').style.display = 'block';
             document.getElementById('btn-calculate').disabled = true;
@@ -24,9 +25,10 @@ function checkValue(id) {
         document.getElementById('btn-save').disabled = false;
     }
 }
-
+//get values from input
 function getInputValue(id) {
     const value = parseFloat(document.getElementById('input-' + id).value);
+    //validation for empty input
     if (isNaN(value)) {
         if (id == 'income') {
             document.getElementById(id + '-error-msg').innerText = 'field can not be empty for ' + id;
@@ -47,6 +49,7 @@ function getInputValue(id) {
     }
 }
 
+//calculate balance and savings
 function calculateValue(button) {
     const income = getInputValue('income');
     const foodExpense = getInputValue('food');
@@ -55,13 +58,15 @@ function calculateValue(button) {
 
     const totalExpense = foodExpense + rent + clothesExpense;
     const balance = income - totalExpense;
+    //error message for emput income input
     if (income == '') {
         document.getElementById('total-expenses').innerText = '$' + income;
         document.getElementById('balance').innerText = '$' + income;
         return;
     }
-
+    //calculate total expense and balance
     if (button == 'calculate') {
+
         if (totalExpense > income) {
             document.getElementById('balance-error-msg').innerText = 'Can not spend more than income.'
             document.getElementById('balance-error-msg-div').style.display = 'block';
@@ -76,6 +81,7 @@ function calculateValue(button) {
 
         }
     }
+    //calculate savings and remaining balance
     else {
         const savingPercentage = getInputValue('save-percentage');
         if (savingPercentage == '') {
@@ -98,13 +104,21 @@ function calculateValue(button) {
     }
 
 }
-
+//click handler for calculate button 
 document.getElementById('btn-calculate').addEventListener('click',
     function () {
         calculateValue('calculate');
     });
-
+//click handler for save butoon
 document.getElementById('btn-save').addEventListener('click',
     function () {
         calculateValue('save');
     });
+// reset all fields
+document.getElementById('btn-reset').addEventListener('click',
+function(){
+    const inputs = document.getElementsByTagName('input');
+    for (const input of inputs) {
+        input.value ='';
+    }
+});

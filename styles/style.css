@@ -27,6 +27,11 @@ background-color: #DCDCDC;
     border: 0;
     background-color: rgb(143, 203, 221);
 }
+/* -------------------reset fields------------------------- */
+#btn-reset{
+    width: 130px;
+    height: 30px;  
+}
 /* -----------------------------error message---------------------------- */
 
 #income-error-msg{
