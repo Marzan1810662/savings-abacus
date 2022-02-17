@@ -47,3 +47,8 @@ background-color: #DCDCDC;
 #balance-error-msg-div{
     display: none;
 }
+
+/* ----------------------footer------------------------------- */
+.footer-bg{
+    background-color: rgba(96, 160, 179, 0.39);;
+}
